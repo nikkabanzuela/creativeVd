@@ -18,15 +18,19 @@
                 <img src="img/logo.png" alt="">
                 <h2>Creative <span>Visual</Video></span> Design</h2>
               </div>
-              <nav>
-                  <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Updates</a></li>
-                    <li><a href="#">Contact</a></li>
-                  </ul>
-               </nav>
+              <nav class="nav">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Updates</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+             </nav>
+             <div class="toggle__menu">
+              <span></span>
+              <span></span>
+              <span></span>
          </div>
         </div>
     </header>
@@ -34,6 +38,9 @@
         <div class="container">
             <div class="SERVICES__wrapper">
                 <div class="SERVICES__content">
+                    <br>
+                    <br>
+                    <br>
                     <h1>Web Design & Development</h1>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos pariatur eligendi accusantium cum reprehenderit nisi saepe tenetur veniam similique ipsa sed cumque quis dolorum natus asperiores nesciunt, expedita, sunt tempora iste culpa temporibus? Repellat asperiores aliquid quis ducimus mollitia similique, modi incidunt facilis blanditiis? Nemo debitis accusantium unde reiciendis? Sit.</p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos pariatur eligendi accusantium cum reprehenderit nisi saepe tenetur veniam similique ipsa sed cumque quis dolorum natus asperiores nesciunt, expedita, sunt tempora iste culpa temporibus? Repellat asperiores aliquid quis ducimus mollitia similique, modi incidunt facilis blanditiis? Nemo debitis accusantium unde reiciendis? Sit.</p>
@@ -123,5 +130,14 @@
     </div>
      </div>
    </footer>
+   <script>
+    const nav = document.querySelector(".nav");
+    const toggle__menu = document.querySelector(".toggle__menu");
+   
+    toggle__menu.addEventListener("click",()=>{
+       toggle__menu.classList.toggle("open");
+       nav.classList.toggle("open")
+    })
+   </script>
 </body>
 </html>

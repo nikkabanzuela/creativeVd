@@ -7,6 +7,7 @@
 body
 {
     font-family: 'Poppins', sans-serif;
+    overflow-x:hidden ;
 }
 :root
 {
@@ -19,7 +20,7 @@ body
 {
     max-width: 112rem;
     margin:0 auto;
-    padding: 0 8rem;
+    padding: 0 1.5rem;
 }
 @media  (min-width: 768px){
 .container
@@ -43,6 +44,8 @@ body
 {
     background-color: var(--black);
     padding: 1rem 0;
+    position: fixed;
+    width: 100%; 
 }
 .header__wrapper
 {
@@ -88,6 +91,7 @@ display: block;
 height: 0.2rem;
 width: 2rem;
 margin-bottom: 0.4rem;
+border-radius: 0.5rem;;
 }
 @media  (max-width: 768px)
 {
@@ -97,7 +101,8 @@ margin-bottom: 0.4rem;
     }
     nav.open ul
     {
-      left: 0;
+      right: -50%;
+      transition: 0.5s ease-in;
     }
      nav ul{
         display: block;
@@ -105,15 +110,17 @@ margin-bottom: 0.4rem;
        right: -100%;
        top: 6.5rem;
        width: 100%;
-       height: 100%;
+       height: 100vh;
        background-color: white;
-       text-align: center;
+       text-align: left;
+       transition: 0.5s ease-in;
     }
     nav ul li a
     {
         display: block;
         width: 100%;
         padding: 1rem;
+        border-bottom: 1px solid gray;
     }
     nav ul li:hover
     {
@@ -123,13 +130,30 @@ margin-bottom: 0.4rem;
     {
         color: var(--white);
     }
+    .toggle__menu.open span:nth-child(1)
+    {
+        transition: 0.5s ease;
+        transform: translate(-2px, 7.3px)rotate(45deg);
+    }
+    .toggle__menu.open span:nth-child(2)
+    {
+       opacity: 0;
+       transition: 0s;
+
+    }
+    .toggle__menu.open span:nth-child(3)
+    {
+        transition: 0.5s ease;
+        transform: translate(-2px, -12px)rotate(-45deg);
+    }
 }
 
 /* 
 start banner*/
 .banner
 {
-    padding: 6rem 0;
+    padding-bottom: 6rem;
+    padding-top: 12rem;
 }
 .banner__wrapper
 {
@@ -141,12 +165,13 @@ start banner*/
 {
  width: 40rem;
 }
+
 .banner__content h1
 {
    color: var(--primary);
-   font: 5rem;
    line-height: 1;
-   font-size: 5rem;
+   font-size: clamp(3rem,5vw,5rem);
+   line-height : 1;
 }
 .banner__content a
 {
@@ -176,6 +201,7 @@ text-align: justify;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 3rem;
 }
+
 .services__type
 {
     text-align: center;
@@ -352,6 +378,7 @@ display: flex;
 gap: 1rem;
 align-items: center;
 
+
 }
 .footer__wrapper
 {
@@ -359,6 +386,8 @@ align-items: center;
     justify-content:space-between;
     align-items: center;
 }
+
+
 
 /* homepage end*/
 .ABOUTME
@@ -481,6 +510,70 @@ color:var(--primary)
 {
     padding: 1rem;
 }
+@media  (max-width: 998px)
+{
+    .banner__wrapper
+    {
+        flex-direction: column;
+    }
+    .banner img 
+    {
+        width: 100% !important;
+    }
+    .services__wrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    .about__wrapper
+    {
+        flex-direction: column;
+    }
+    .about img 
+    {
+        width: 100% !important;
+    }
+    .trends__wrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    .footer__wrapper
+    {
+        display: block;
+    
+    }
+    .footer
+    {
+        text-align: center;
+    }
+    .socialLinks
+    {
+      display: block;
+    }
+    .socialLinks ul
+    {
+     justify-content: center;
+    }
+    .ABOUTME__wrapper
+    {
+        flex-direction: column;
+    }
+    .ABOUTME img
+    {
+        width: 100% !important;
+    }
+    .project__wrapper
+    {
+        grid-template-columns: 1fr;
+    }
+    .SERVICES__wrapper
+    {
+        flex-direction: column;
+    }
+    .vector__wrapper
+    {
+        flex-direction: column;
+    }
+}
 /*start na services*/
 .SERVICES
 {
@@ -563,22 +656,33 @@ color: var(--primary);
     align-items: center;
     
 }
+.con
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+.UPDATES h2
+{
+    padding-top:6rem ;
+   color: var(--primary);
+}
 .UPDATES__content img
 {
     width: 40rem;
-    padding-top: 2rem;
 }
 .UPDATES__content h2,h3
 {
 color: var(--primary);
-gap: 2rem;
-padding-bottom: 1rem;
+gap: 3rem;
 }
+
 .UPDATES__content small
 {
     color: var(--primary);
-    gap: 2rem;
-    padding-top: 2rem;
+    gap: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
 }
 .latestTrends__wrapper ul
 {
@@ -606,5 +710,44 @@ align-items: center;
     justify-content:space-between;
     align-items: center;
 }
+.categ ul
+{
+   list-style: none;
+   gap: 0.8rem;
+}
+.categ ul li
+{
+    padding-bottom: 2rem;
+}
+.categ h3
+{
+    padding-bottom: 1rem;
+}
+.post
+{
+    padding-top: 8rem;
+}
+.recentpost h3
+{
+color: var(--primary);
+}
+.post 
+{
+    display: flex;
+    gap: 1rem;
+}
+.post
+{
+    align-items: center;
+    gap: 1rem;
+}
+.post img
+{
+ width: 5rem;
+}
 
-
+.post p
+{
+margin: 1rem;
+text-align: justify;
+}
